@@ -65,10 +65,17 @@ where you will be doing your code development. In the example below, it is calle
 
 > ## Local machine
 > ~~~
-> cd # This is to make sure I'm in my home directory
+> # Make sure I'm in my home directory
+> cd 
+>
+> # Create the directory
 > mkdir cms_open_data_work
+>
+> # Change the permissions on the directory to give everyone access
+> chmod 777 -R cms_open_data_work
 > ~~~
 > {: .language-bash}
+> If you forget to do the last step of changing permissions with the `chmod` command, you may find that your docker container will not start in the next step.
 {: .challenge}
 
 > ## Warning!
@@ -329,6 +336,7 @@ First, create a working directory on your local computer:
 ~~~
 cd
 mkdir cms_open_data_root
+chmod 777 -R cms_open_data_root
 ~~~
 {: .language-bash}
 
@@ -371,6 +379,7 @@ First, create a working directory on your local computer:
 ~~~
 cd
 mkdir cms_open_data_python
+chmod 777 -R cms_open_data_python
 ~~~
 {: .language-bash}
 
@@ -407,6 +416,7 @@ and opening the link in the message on your browser.
 > docker rm my_python
 > rm -rf cms_open_data_python
 > mkdir cms_open_data_python
+> chmod 777 -R cms_open_data_python
 > ~~~
 > {: .language-bash}
 > and create the container again with the `docker run ...` command above.
