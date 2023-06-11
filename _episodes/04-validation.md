@@ -103,7 +103,7 @@ gmake[1]: Leaving directory `/code/CMSSW_7_6_7'
 ~~~
 {: .output}
 
-Before launching the job, let's modify the configuration file (do not worry, you will learn about all this stuff in a different [lesson](https://cms-opendata-workshop.github.io/workshop2022-lesson-cmssw/)) so that it will read a CMS open data file.
+Before launching the job, let's modify the configuration file (do not worry, you will learn about all this stuff in a different [lesson](https://cms-opendata-workshop.github.io/workshop2023-lesson-cmssw/)) so that it will read a CMS open data file.
 
 Open the `ConfFile_cfg.py` in the `Demo/DemoAnalyzer/python` directory with your normal editor on your local computer.You will find the `Demo` area under the  `cms_open_data_work/CMSSW_7_6_7/src` directory on your local computer. As the working directory has been mounted into the container, all changes take effect there as well. 
 

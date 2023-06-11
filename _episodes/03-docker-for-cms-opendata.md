@@ -37,6 +37,22 @@ For different CMSSW container images, some guidance can be found on the
 
 ## Download the docker image for CMSSW open data and start a container
 
+> ## Info for Mac users!
+> If you have a Mac and if you ran into challenges in the Docker lesson executing code in *CMSSW_7_6_7* container,
+> this may be a currently untenable problem with the computer chip in your Mac. 
+>
+> *Don't worry!* :)
+>
+> This will not prevent you from engaging in the vast majority of the workshop.
+> * For the workshop, much of the data will already have been processed and you can then analyze it with docker containers that work better with Mac processors.
+> * Or you will be working in a cloud environment, where the docker container *will* run OK.
+> 
+> For purposes of this lesson, if you run into issues with the *CMSSW_7_6_7* container, you can skip down to the ROOT and python tools
+> container further down on this page. 
+{: .callout}
+
+
+
 The first time you start a container, a docker image file gets downloaded from an image registry. The CMSSW open data image is large (6.6GB) and it may take very long to
 download, depending on the speed of your internet
 connection. After the download, a container created from that image starts. The image download needs to be done only once. Afterwards, when starting a container, it will find the downloaded image on your computer, and it will be much faster.
@@ -239,11 +255,15 @@ This is a standalone image for CMSSW_7_6_7 slc6_amd64_gcc493.
 
 <p>This is now a bash shell in the CMS open data environment in which you have access to a complete CMS software release that is appropriate for interfacing with the 2015 13 TeV datasets.</p>
               
- <blockquote class="testimonial">
+<blockquote class="testimonial">
+  <p> Problems have been reported running amd-based containers such as this on MacOS with M1 chip. Increasing the memory available to Docker may help. Please check the possible solutions in <a href="https://opendata-forum.cern.ch/t/cms-open-data-docker-test-and-validate-error/111/12">this post</a> in the CERN Open Data forum. Note, however, that this may help you to open the container, but it is very likely that problems remain when you try to compile code and run jobs in it.</p> 
+</blockquote>
+
+<!-- <blockquote class="testimonial">
   <p> Problems have been reported running amd-based containers such as this on MacOS with M1 chip. Increasing the memory available to Docker may help. Please check the possible solutions in <a href="https://opendata-forum.cern.ch/t/cms-open-data-docker-test-and-validate-error/111/12">this post</a> in the CERN Open Data forum. Note, however, that this may help you to open the container, but it is very likely that problems remain when you try to compile code and run jobs in it.</p> <p>For the CMS open data workshop, we provide a <a href=" http://docker.cms-cloud.net/">temporary solution</a> which gives a docker environment in browser. You can use it for the CMSSW container during the lessons, if needed. Note the following: <ul>
   <li>in the "Play with docker" terminal, after having created the working directory and before starting the container, change the permission of the working directory with <code class="language-plaintext highlighter-rouge">chmod 777 cms_open_data_work</code></li>
   <li>if you use the editor that comes with "Play with docker", the owner of the edited file needs to be changed back in the container with <code class="language-plaintext highlighter-rouge">sudo chown $USER file-name</code></li>
-  <li>for the vnc in browser (see below), opens it by cliking "Open port", give 6080 and then add <code class="language-plaintext highlighter-rouge">vnc.html</code> in the URL of the tab that opens.</li></ul>The other containers used in this workshop should run fine on MacOS with M1 chip.</p></blockquote>
+  <li>for the vnc in browser (see below), opens it by cliking "Open port", give 6080 and then add <code class="language-plaintext highlighter-rouge">vnc.html</code> in the URL of the tab that opens.</li></ul>The other containers used in this workshop should run fine on MacOS with M1 chip.</p></blockquote>-->
 
 <p>As there are rate limits for pulls from Docker Hub, you may get the following error message: <code class="language-plaintext highlighter-rouge">docker: Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading.</code>. In that case, try later (the limit is per 6 hours) or use the mirror <code class="language-plaintext highlighter-rouge">gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_7_6_7-slc6_amd64_gcc493</code> instead of <code class="language-plaintext highlighter-rouge">cmsopendata/cmssw_7_6_7-slc6_amd64_gcc493</code>.</p>
               
@@ -298,7 +318,7 @@ To kill the vncserver enter 'vncserver -kill :1'
 
 ## Download the docker images for ROOT and python tools and start container
 
-Containers with ROOT and python libraries installed are provided for your convenience. These containers can be used in the [C++, ROOT and python tools lesson](https://cms-opendata-workshop.github.io/workshop2022-lesson-cpp-root-python/) and later on for your work with CMS open data.
+Containers with ROOT and python libraries installed are provided for your convenience. These containers can be used in the [C++, ROOT and python tools lesson](https://cms-opendata-workshop.github.io/workshop2023-lesson-cpp-root-python/) and later on for your work with CMS open data.
 
 ### ROOT container
 
