@@ -201,23 +201,9 @@ Congratulations! You are all set with your Docker environment.
   <li>for the vnc in browser, open it by cliking "Open port", give 6080 and then add <code class="language-plaintext highlighter-rouge">vnc.html</code> in the URL of the tab that opens.</li></ul>The other containers used in this workshop should run fine on MacOS with M1 chip.</p> -->
   </blockquote>
 
-> ## One more MacOS M1 workaround idea...
-> If increasing memory for Docker did not help, there's not much we can do. But this is not a show-stopper, you can still work with the CMS Open data, but you have to work differently. You will not be able to run CMSSW jobs in the CMSSW open data container on your own laptop, but you can still use the container. We propose the following:
-> 
-> - run the quick examples and tests as GitHub actions using the CMSSW container (in which case your jobs run on GitHub "runners") and download the ouput files as "artifacts" (an example is coming soon)
-> - for any larger production, you would in any case use other resources than your own laptop, you will learn more about that in the cloud tutorial
-> - you can still use the two other containers (for ROOT and python) to inspect the output of your jobs.
+> ## A workaround for problems with docker or running containers on your laptop:
+> If you cannot get the CMSSW container - or docker in general - running on your laptop, we propose setting up a virtual machine (VM) on a cloud provider. Follow the instruction on how to [set it up on Azure cloud ](https://cms-opendata-workshop.github.io/workshop2023-lesson-azureVM/). Note that despite Azure being provided by Microsoft, the VM is a Linux system and behaves as a Linux shell on your laptop.
 >
-> To run a short CMSSW example job as a GitHub workflow, first go to the [example repository](https://github.com/cms-opendata-workshop/workshop2022-CMSSW-container-demo). The repository contains the example code generated above, with the two modifications in the configuration file for the file name and the number of events. To get your own version of it click on the arrow to the right of Fork (top right), and choose "Create a new fork". 
->
-> In your new repository, go to the Actions tab, and click on "I understand my workflow, go ahead and enable them". Choose the workflow "Test CMSSW on plain docker" and run the workflow by selecting branch `docker-04` under "Run workflow".
->
-> ![](../assets/img/github_action_run_workflow.png)
-> You can follow the job progress and output by clicking on "DemoAnalyzer test - plain docker" and expanding on "Going to a container", and if the job finishes with success, you will find the ouput under "Artifacts" in the workflow summary. In this example, it is the ouput log from the job above, but you could eventually produce some data files later on during this workshop and download them from the same place.
->
-> Note that every time the workflow runs it takes several minutes to start, as it needs to download the container image. This certainly not ideal for quick testing, but remember that this is a workaround as you were not able to run jobs on the container locally.
->
-> The workflow is defined in `.github/workflows/main.yaml` and the commands that are passed into the container are in `commands.sh` in branch `docker-04` of the repository.
 {: .solution}
 
 {% include links.md %}
